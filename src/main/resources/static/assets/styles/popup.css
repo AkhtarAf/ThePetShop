@@ -1,0 +1,203 @@
+.popup {
+    position: fixed;
+    display: none;
+    z-index: 100;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70vw;
+    height: 80vh;
+    border-radius: 10px;
+    z-index: 100;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    text-align: center;
+    background: rgba(249, 244, 232, 0.1);
+    backdrop-filter: blur(100px);
+    -webkit-backdrop-filter:blur(100px);
+    filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.4)); 
+    border-radius: 30px;
+}
+
+.popup .right {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0 30px 30px 0;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: #1E2130;
+    margin: 0;
+}
+
+.popup .right .right-content-image {
+    background-image: url('../images/cat.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    
+    width: 20vw;
+    height: 40vh;
+}
+
+.popup .right .right-content-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 2.5vw;
+    color: #FFF;
+    margin: 0;
+}
+
+.popup .right .right-content-subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 1.2vw;
+    color: #FFF;
+    margin: 0;
+}
+
+.popup .left {
+    display: flex;
+    flex-direction: row;
+    border-radius: 30px 0 0 30px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.popup .left .left-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 80%;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.popup .left .left-content .left-content-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #1E2130;
+    margin: 20px 0;
+}
+
+.popup .left .left-content .left-content-input {
+    padding-left: 10px;
+    width: 70%;
+    height: 40px;
+    box-sizing: border-box;
+    margin: 0 0 20px 0;
+    border-radius: 5px;
+    border: #1E2130 solid 3px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+
+}
+
+.dropdown-short {
+    width: 25% !important;
+}
+
+.popup .left .left-content .left-content-button {
+    width: 70%;
+    height: 40px;
+    font-weight: bold;
+    box-sizing: border-box;
+    margin: 0;
+    border-radius: 5px;
+    border: #1E2130 solid 3px;
+    background-color: #1E2130;
+    color: #FFF;
+    transition: all 0.3s ease-in-out;
+}
+
+.popup .left .left-content .left-content-button:hover {
+    background-color: #FFF;
+    color: #1E2130;
+}
+
+.save-accent {
+    background-color: #1E2130;
+    color: #FFF;
+    width: 55% !important;
+}
+
+.delete-accent {
+    border-color: red !important;
+    background-color: #FFF !important;
+    color: red !important;
+    width: 40% !important;
+}
+
+.delete-accent:hover {
+    background-color: red !important;
+    color: #FFF !important;
+}
+
+.popup .close-btn {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    color: #fff;
+    background-color: #1E2130;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border: #fff solid 3px;
+    border-radius: 40px;
+    font-weight: bold;
+}
+
+.popup a {
+    text-decoration: none;
+    color: #1E2130;
+    font-weight: bold;
+}
+
+.popup a:hover {
+    color: #4e5470;
+    transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 730px) {
+
+    .popup {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+
+    .popup .close-btn {
+        color: #1E2130;
+        border-color: #1E2130;
+        background-color: #fff;
+
+        -webkit-user-select: none; /* Safari */
+        -ms-user-select: none; /* IE 10 and IE 11 */
+        user-select: none; /* Standard syntax */
+    }
+
+    .popup .right {
+        display: none;
+    }
+
+    .popup .left .left-content {
+        width: 80%;
+    }
+
+}
+
+

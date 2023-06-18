@@ -1,0 +1,22 @@
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    bottom: 0;
+    /*align center responsive*/
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 90px;
+    background-color: #1E2130;
+    color: #FFF;
+    border-radius: 40px 40px 0 0;
+
+    text-align: center;
+}
+
+footer span {
+    font-weight: 700;
+}

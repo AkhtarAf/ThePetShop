@@ -1,0 +1,46 @@
+.main-content-table {
+    margin: 15vh 10vw;
+}
+
+.main-content-table table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 2px solid #1E2130;
+    text-align: center;
+}
+
+.main-content-table table th {
+    border: 2px solid #1E2130;
+    height: 35px;
+    background-color: #1E2130;
+    color: #FFF;
+}
+
+.main-content-table table th:first-child {
+    width: 3%;
+}
+
+
+.main-content-table table td {
+    border: 2px solid #1E2130;
+    background-color: #fff;
+    color: #1E2130;
+    height: 35px;
+}
+
+@media (max-width: 730px) {
+   
+    .main-content-table {
+        margin: 15vh 5vw;
+    }
+
+    .main-content-table table th {
+        font-size: 0.8rem;
+    }
+
+    .main-content-table table td {
+        font-size: 0.8rem;
+    }
+
+}

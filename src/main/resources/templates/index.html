@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/styles/styles.css">
+    <link rel="stylesheet" href="assets/styles/header.css">
+    <link rel="stylesheet" href="assets/styles/footer.css">
+    <link rel="stylesheet" href="assets/styles/popup.css">
+    <link rel="stylesheet" href="assets/styles/splashscreen.css">
+    <title>Home</title>
+</head>
+<body>
+
+
+    <!--Splashscreen-->
+    <div class="splashscreen">
+        <div class="splashscreen-content">
+            <div class="splashscreen-content-logo">
+                <img src="assets/images/Logo.svg" alt="logo">
+            </div>
+            <div class="splashscreen-content-title">
+                <span>We care, As you care</span>
+            </div>
+            <div class="loader">
+                <div class="loader__element"></div>
+              </div>
+        </div>
+        </div>
+
+    <!--Header-->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="/"><img src="assets/images/Logo.svg" alt="logo"></a>
+            </div>
+        </div>
+    </header>
+    
+    <!--Main-->
+    <main>
+        <div class="container">
+            <div class="main-content">
+                <span class="main-content-greeting"></span>
+                <span class="main-content-avatar"></span>
+
+                <button class="main-content-button" onclick="togglePopup()">Add Your Pet</button>
+
+            </div>
+        </div>
+
+        <!-- Popup -->
+        <div class="popup">
+            <button class="close-btn" onclick="togglePopup()">X</button>
+            <div class="left">
+                <div class="left-content">
+                    <div class="left-content-title">Add Your Pet</div>
+                    <form action="/pets" method="post">
+                        <input type="text" name="id" hidden>
+                        <input type="text" class="left-content-input" name="pet_name" placeholder="Enter your pet's name">
+                        <!-- input dropdown with 3 options -->
+                        <select class="left-content-input dropdown-short" name="pet_type">
+                            <option value="dog">Dog</option>
+                            <option value="cat">Cat</option>
+                            <option value="rabbit">Rabbit</option>
+                        </select>
+                        <!-- input radio buttons `male` and `female` -->
+                        <label>Gender : </label>
+                        <input type="radio" id="male" name="gender" value="male" >
+                        <label for="male">Male</label>
+                        <input type="radio" id="female" name="gender" value="female" checked>
+                        <label for="female">Female</label><br><br>
+                        <label for="vaccinated">Vaccinated :</label>
+                        <input type="checkbox" id="vaccinated" name="vaccinated" value="vaccinated"> <br><br>
+                        <button class="left-content-button" name="submit">Signup</button>
+
+                        <br><br>
+                        <a href="/petTable.html">Show all registered pets</a>
+                        </form>
+                </div>
+            </div>
+
+            <div class="right">
+                <span class="right-content-image"></span>
+                <span class="right-content-title">You Love Me ?</span>
+                <span class="right-content-subtitle">Please, Vaccinate me.</span>
+            </div>
+        </div>
+
+    <!--Footer-->
+    <footer>
+        <span> Afshan Akhtar &copy;</span>
+    </footer>
+
+    <script src="assets/scripts/script.js"></script>
+</body>
+</html>
