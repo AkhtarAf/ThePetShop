@@ -1,7 +1,7 @@
-package com.akhtaraf.assignment2.data.jpa.entity;
+package sheridan.akhtaraf.assignment2.data.jpa.entity;
 
-import com.akhtaraf.assignment2.model.PetGender;
-import com.akhtaraf.assignment2.model.PetType;
+import sheridan.akhtaraf.assignment2.model.PetGender;
+import sheridan.akhtaraf.assignment2.model.PetType;
 import jakarta.persistence.*;
 
 @Entity

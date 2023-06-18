@@ -1,7 +1,7 @@
-package com.akhtaraf.assignment2.model;
+package sheridan.akhtaraf.assignment2.model;
 
-public enum PetType {
-    DOG, CAT, RABBIT;
+public enum PetGender {
+    MALE, FEMALE;
 
     @Override
     public String toString() {

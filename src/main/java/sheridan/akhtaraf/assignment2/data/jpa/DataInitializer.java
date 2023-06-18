@@ -1,9 +1,9 @@
-package com.akhtaraf.assignment2.data.jpa;
+package sheridan.akhtaraf.assignment2.data.jpa;
 
-import com.akhtaraf.assignment2.data.jpa.entity.PetEntity;
-import com.akhtaraf.assignment2.data.jpa.repository.PetRepository;
-import com.akhtaraf.assignment2.model.PetGender;
-import com.akhtaraf.assignment2.model.PetType;
+import sheridan.akhtaraf.assignment2.data.jpa.entity.PetEntity;
+import sheridan.akhtaraf.assignment2.data.jpa.repository.PetRepository;
+import sheridan.akhtaraf.assignment2.model.PetGender;
+import sheridan.akhtaraf.assignment2.model.PetType;
 import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Service;
 
