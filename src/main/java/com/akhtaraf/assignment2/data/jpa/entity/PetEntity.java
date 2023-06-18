@@ -5,7 +5,7 @@ import com.akhtaraf.assignment2.model.PetType;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "pets")
+@Table(name = "pet")
 public class PetEntity {
 
     // Column id
