@@ -71,6 +71,9 @@
                 </div>
 
             </div>
+            <div class="center">
+                <button class="accent-button"><a href="/">Go Home</a></button>
+            </div>
         </div>
     </main>
   <!-- Popup -->
@@ -79,26 +82,26 @@
     <div class="left">
         <div class="left-content">
             <div class="left-content-title">Change Details</div>
-            <form action="/pets" method="post">
-              <input type="text" name="id" hidden>
-                <input type="text" class="left-content-input" name="pet_name" placeholder="Enter your pet's name">
+            <form action="/pet/update" method="POST">
+              <input type="text" name="id" id="id" hidden>
+                <input type="text" class="left-content-input" name="name" placeholder="Enter your pet's name">
                 <!-- input dropdown with 3 options -->
-                <select class="left-content-input dropdown-short" name="pet_type">
-                    <option value="dog">Dog</option>
-                    <option value="cat">Cat</option>
-                    <option value="rabbit">Rabbit</option>
+                <select class="left-content-input dropdown-short" name="petType">
+                    <option value="DOG">Dog</option>
+                    <option value="CAT">Cat</option>
+                    <option value="RABBIT">Rabbit</option>
                 </select>
                 <!-- input radio buttons `male` and `female` -->
                 <label>Gender : </label>
-                <input type="radio" id="male" name="gender" value="male" >
+                <input type="radio" id="male" name="petGender" value="MALE" >
                 <label for="male">Male</label>
-                <input type="radio" id="female" name="gender" value="female" checked>
+                <input type="radio" id="female" name="petGender" value="FEMALE" checked>
                 <label for="female">Female</label><br><br>
                 <label for="vaccinated">Vaccinated :</label>
                 <input type="checkbox" id="vaccinated" name="vaccinated"> <br><br>
                 <div class="group-sideways">
-                <button class="left-content-button save-accent" name="save">Save</button>
-                <button class="left-content-button delete-accent" >Delete</button>
+                <button class="left-content-button save-accent" name="submit">Save</button>
+                <button class="left-content-button delete-accent" type="button" th:attr="onclick=|deleteRecord()|">Delete</button>
                 </div>
                 </form>
         </div>

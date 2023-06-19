@@ -55,11 +55,12 @@
             <div class="left">
                 <div class="left-content">
                     <div class="left-content-title">Add Your Pet</div>
-                    <form action="/pet/insert" method="post" >
+                    <form action="/pet/insert" method="POST" >
                         <input type="text" name="id" hidden>
                         <input type="text" class="left-content-input" name="name" placeholder="Enter your pet's name">
                         <!-- input dropdown with 3 options -->
                         <select class="left-content-input dropdown-short" name="petType">
+                            <option value="" disabled selected>Select Pet Kind</option>
                             <option value="DOG">Dog</option>
                             <option value="CAT">Cat</option>
                             <option value="RABBIT">Rabbit</option>

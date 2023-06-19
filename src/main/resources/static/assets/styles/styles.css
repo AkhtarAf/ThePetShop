@@ -70,6 +70,62 @@ html, body {
     align-items: center;
 }
 
+.main-content-center {
+    padding-top: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.main-content-center img {
+    height: 100px;
+    width: 100px;
+}
+
+.center {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    column-gap: 10px;
+}
+
+.accent-button {
+    width: 180px;
+    height: 50px;
+    border-radius: 60px;
+    box-shadow: none;
+    border: none;
+    background: #1E2130;
+    color: #ffffff;
+
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.accent-button a {
+    text-decoration: none;
+    color: white;
+}
+
+.main-content-center p {
+    margin-bottom: 60px;
+    margin-top: -10px;
+}
+
+.light-button {
+    background: #ffffff !important;
+    border: 3px solid #1E2130 !important;
+}
+
+.light-button a {
+    color: #1E2130 !important;
+}
+
 /* media queries */
 @media (max-width: 917px) {
 

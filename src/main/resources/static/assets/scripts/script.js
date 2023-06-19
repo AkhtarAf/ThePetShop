@@ -19,11 +19,13 @@ function togglePopup(data) {
     }
 
     if (data) {
+        document.getElementById("id").value = data.id;
+
         document.getElementsByClassName("left-content-input")[0].value = data.name;
 
-        document.getElementsByClassName("left-content-input")[1].value = data.petType.toLowerCase();
+        document.getElementsByClassName("left-content-input")[1].value = data.petType.toUpperCase();
     
-        document.getElementById(data.petGender.toLowerCase()).checked = true;
+        document.getElementById(data.petGender.toUpperCase()).checked = true;
     
         document.getElementById("vaccinated").checked = data.vaccinated;   
      }
@@ -33,16 +35,18 @@ function togglePopup(data) {
 function postRequest(url, data, callback) {
     var request = new XMLHttpRequest();
     request.open('POST', url, true);
-    request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     request.onload = function() {
         callback(request);
     };
-    request.send(JSON.stringify(data));
+
+
+    request.send("id="+ data);
 }
 
 // splash screen fadiing out without display none
 
-if(sessionStorage.getItem("splashscreen") != "true") {
+if(sessionStorage.getItem("splashscreen") !== "true") {
 setTimeout(function() {
     document.getElementsByClassName("splashscreen")[0].style.opacity = "0";
 } , 3000);
@@ -56,6 +60,8 @@ setTimeout(function() {
 
 // Function to create new entry
 
-function createNewRecord() {
-
+function deleteRecord() {
+    const id = document.getElementById("id").value;
+    postRequest("/pet/delete", id,
+        () => { location.reload();});
 }

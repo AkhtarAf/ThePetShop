@@ -43,48 +43,19 @@
   <div class="container">
     <div class="main-content">
       <div class="main-content-center">
-          <h2>Data has been changed.</h2>
+        <img src="../static/assets/images/success.png" th:src="@{/assets/images/success.png}">
+        <h2>Data has been <span th:text="${changeType}"></span>.</h2>
         <p>The changes you requested has been reflected.</p>
-      </div>
-</main>
-<!-- Popup -->
-<div class="popup">
-  <button class="close-btn" onclick='togglePopup()'>X</button>
-  <div class="left">
-    <div class="left-content">
-      <div class="left-content-title">Change Details</div>
-      <form action="/pets" method="post">
-        <input type="text" name="id" hidden>
-        <input type="text" class="left-content-input" name="pet_name" placeholder="Enter your pet's name">
-        <!-- input dropdown with 3 options -->
-        <select class="left-content-input dropdown-short" name="pet_type">
-          <option value="dog">Dog</option>
-          <option value="cat">Cat</option>
-          <option value="rabbit">Rabbit</option>
-        </select>
-        <!-- input radio buttons `male` and `female` -->
-        <label>Gender : </label>
-        <input type="radio" id="male" name="gender" value="male" >
-        <label for="male">Male</label>
-        <input type="radio" id="female" name="gender" value="female" checked>
-        <label for="female">Female</label><br><br>
-        <label for="vaccinated">Vaccinated :</label>
-        <input type="checkbox" id="vaccinated" name="vaccinated"> <br><br>
-        <div class="group-sideways">
-          <button class="left-content-button save-accent" name="save">Save</button>
-          <button class="left-content-button delete-accent" >Delete</button>
+
+        <div>
+        <button class="accent-button"><a href="/">Go Home</a></button>
+        <button class="accent-button light-button"><a href="/pets">Pet List</a></button>
         </div>
-      </form>
+
+      </div>
     </div>
   </div>
-
-  <div class="right">
-    <span class="right-content-image"></span>
-    <span class="right-content-title">You Love Me ?</span>
-    <span class="right-content-subtitle">Please, Vaccinate me.</span>
-  </div>
-</div>
-
+</main>
 
 <!--Footer-->
 <footer>

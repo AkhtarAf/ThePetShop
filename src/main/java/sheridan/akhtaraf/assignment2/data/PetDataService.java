@@ -21,4 +21,6 @@ public interface PetDataService {
     );
 
     void updatePetRecord(Pet updatedPet);
+
+    void deletePetRecord(Integer id);
 }

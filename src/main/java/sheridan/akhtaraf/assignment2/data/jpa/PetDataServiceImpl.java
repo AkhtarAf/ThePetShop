@@ -94,4 +94,15 @@ public class PetDataServiceImpl implements PetDataService {
             repository.save(entityToUpdate);
         }
     }
+
+    @Override
+    public void deletePetRecord(Integer id) {
+        Optional<PetEntity> optionalPetEntity = repository.findById(id);
+
+        if(optionalPetEntity.isPresent()) {
+            PetEntity entityToDelete = optionalPetEntity.get();
+            repository.delete(entityToDelete);
+        }
+
+    }
 }
