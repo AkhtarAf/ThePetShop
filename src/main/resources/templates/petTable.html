@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/styles/styles.css">
-    <link rel="stylesheet" href="assets/styles/header.css">
-    <link rel="stylesheet" href="assets/styles/footer.css">
-    <link rel="stylesheet" href="assets/styles/table.css">
-    <link rel="stylesheet" href="assets/styles/popup.css">
-    <link rel="stylesheet" href="assets/styles/splashscreen.css">
+    <link rel="stylesheet" href="../static/assets/styles/styles.css" th:href="@{/assets/styles/styles.css}">
+    <link rel="stylesheet" href="../static/assets/styles/header.css" th:href="@{/assets/styles/header.css}">
+    <link rel="stylesheet" href="../static/assets/styles/footer.css" th:href="@{/assets/styles/footer.css}">
+    <link rel="stylesheet" href="../static/assets/styles/table.css" th:href="@{/assets/styles/table.css}">
+    <link rel="stylesheet" href="../static/assets/styles/popup.css" th:href="@{/assets/styles/popup.css}">
+    <link rel="stylesheet" href="../static/assets/styles/splashscreen.css" th:href="@{/assets/styles/splashscreen.css}">
 
     <title>Home</title>
 </head>
@@ -18,7 +18,7 @@
     <div class="splashscreen">
       <div class="splashscreen-content">
           <div class="splashscreen-content-logo">
-              <img src="assets/images/Logo.svg" alt="logo">
+              <img src="../static/assets/images/Logo.svg" alt="logo" th:src="@{/assets/images/Logo.svg}" >
           </div>
           <div class="splashscreen-content-title">
               <span>We care, As you care</span>
@@ -33,7 +33,7 @@
     <header>
         <div class="container">
             <div class="logo">
-                <a href="/"><img src="assets/images/Logo.svg" alt="logo"></a>
+                <a href="/"><img src="../static/assets/images/Logo.svg" alt="logo" th:src="@{/assets/images/Logo.svg}" ></a>
             </div>
         </div>
     </header>
@@ -50,32 +50,20 @@
           <th>No.</th>
           <th>Pet Name</th>
           <th>Gender</th>
+            <th>Type</th>
           <th>Vaccinated</th>
           <th></th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-            <td>1</td>
-            <td>Cell</td>
-            <td>Cell</td>
-          <td>Cell</td>
-          <td><button onclick='togglePopup()'>Edit</button></td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Cell</td>
-            <td>Cell</td>
-          <td>Cell</td>
-          <td><button onclick='togglePopup()'>Edit</button></td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>Cell</td>
-            <td>Cell</td>
-          <td>Cell</td>
-          <td><button onclick="togglePopup()">Edit</button></td>
-        </tr>
+        <tr th:each="p, i: ${pets}">
+            <td th:text="${p.id}"></td>
+            <td th:text="${p.name}"></td>
+            <td th:text="${p.petGender}"></td>
+          <td th:text="${p.petType}"></td>
+            <td th:text="${p.vaccinated}" th></td>
+            <td><button th:attr="onclick=|togglePopup({'id': ${p.id}, 'name': '${p.name}', 'petGender': '${p.petGender}', 'petType': '${p.petType}', 'vaccinated': ${p.vaccinated}})|" >Edit</button></td>
+        </tr>-
       </tbody>
     </table>
     
@@ -84,7 +72,7 @@
 
             </div>
         </div>
-
+    </main>
   <!-- Popup -->
   <div class="popup">
     <button class="close-btn" onclick='togglePopup()'>X</button>
@@ -129,6 +117,6 @@
         <span> Afshan Akhtar &copy;</span>
     </footer>
 
-    <script src="assets/scripts/script.js"></script>
+    <script src="../static/assets/scripts/script.js" th:src="@{/assets/scripts/script.js}"></script>
 </body>
 </html>

@@ -1,6 +1,7 @@
 
 // function to toggle popup on click
 function togglePopup(data) {
+    // function to convert Pet[id=1, name=Milo, petGender=male, petType=cat, vaccinated=true] to an array
 
     document.getElementsByClassName("left-content-input")[0].value = ""
 
@@ -20,9 +21,9 @@ function togglePopup(data) {
     if (data) {
         document.getElementsByClassName("left-content-input")[0].value = data.name;
 
-        document.getElementsByClassName("left-content-input")[1].value = data.type;
+        document.getElementsByClassName("left-content-input")[1].value = data.petType.toLowerCase();
     
-        document.getElementById(data.gender).checked = true;
+        document.getElementById(data.petGender.toLowerCase()).checked = true;
     
         document.getElementById("vaccinated").checked = data.vaccinated;   
      }
@@ -38,7 +39,7 @@ function postRequest(url, data, callback) {
     };
     request.send(JSON.stringify(data));
 }
-    
+
 // splash screen fadiing out without display none
 
 if(sessionStorage.getItem("splashscreen") != "true") {
@@ -51,4 +52,10 @@ setTimeout(function() {
 } , 4000);
 } else {
   document.getElementsByClassName("splashscreen")[0].style.display = "none";
+}
+
+// Function to create new entry
+
+function createNewRecord() {
+
 }

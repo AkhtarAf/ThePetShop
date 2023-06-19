@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../static/assets/styles/styles.css" th:href="@{/assets/styles/styles.css}">
+  <link rel="stylesheet" href="../static/assets/styles/header.css" th:href="@{/assets/styles/header.css}">
+  <link rel="stylesheet" href="../static/assets/styles/footer.css" th:href="@{/assets/styles/footer.css}">
+  <link rel="stylesheet" href="../static/assets/styles/table.css" th:href="@{/assets/styles/table.css}">
+  <link rel="stylesheet" href="../static/assets/styles/popup.css" th:href="@{/assets/styles/popup.css}">
+  <link rel="stylesheet" href="../static/assets/styles/splashscreen.css" th:href="@{/assets/styles/splashscreen.css}">
+
+  <title>Home</title>
+</head>
+<body>
+
+<!--Splashscreen-->
+<div class="splashscreen">
+  <div class="splashscreen-content">
+    <div class="splashscreen-content-logo">
+      <img src="../static/assets/images/Logo.svg" alt="logo" th:src="@{/assets/images/Logo.svg}" >
+    </div>
+    <div class="splashscreen-content-title">
+      <span>We care, As you care</span>
+    </div>
+    <div class="loader">
+      <div class="loader__element"></div>
+    </div>
+  </div>
+
+</div>
+<!--Header-->
+<header>
+  <div class="container">
+    <div class="logo">
+      <a href="/"><img src="../static/assets/images/Logo.svg" alt="logo" th:src="@{/assets/images/Logo.svg}" ></a>
+    </div>
+  </div>
+</header>
+
+<!--Main-->
+<main>
+  <div class="container">
+    <div class="main-content">
+      <div class="main-content-center">
+          <h2>Data has been changed.</h2>
+        <p>The changes you requested has been reflected.</p>
+      </div>
+</main>
+<!-- Popup -->
+<div class="popup">
+  <button class="close-btn" onclick='togglePopup()'>X</button>
+  <div class="left">
+    <div class="left-content">
+      <div class="left-content-title">Change Details</div>
+      <form action="/pets" method="post">
+        <input type="text" name="id" hidden>
+        <input type="text" class="left-content-input" name="pet_name" placeholder="Enter your pet's name">
+        <!-- input dropdown with 3 options -->
+        <select class="left-content-input dropdown-short" name="pet_type">
+          <option value="dog">Dog</option>
+          <option value="cat">Cat</option>
+          <option value="rabbit">Rabbit</option>
+        </select>
+        <!-- input radio buttons `male` and `female` -->
+        <label>Gender : </label>
+        <input type="radio" id="male" name="gender" value="male" >
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female" checked>
+        <label for="female">Female</label><br><br>
+        <label for="vaccinated">Vaccinated :</label>
+        <input type="checkbox" id="vaccinated" name="vaccinated"> <br><br>
+        <div class="group-sideways">
+          <button class="left-content-button save-accent" name="save">Save</button>
+          <button class="left-content-button delete-accent" >Delete</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="right">
+    <span class="right-content-image"></span>
+    <span class="right-content-title">You Love Me ?</span>
+    <span class="right-content-subtitle">Please, Vaccinate me.</span>
+  </div>
+</div>
+
+
+<!--Footer-->
+<footer>
+  <span> Afshan Akhtar &copy;</span>
+</footer>
+
+<script src="../static/assets/scripts/script.js" th:src="@{/assets/scripts/script.js}"></script>
+</body>
+</html>
